@@ -15,8 +15,8 @@ function App() {
     },
     {
       id: uuid(),
-      title: "알고리즘 문제 풀기",
-      contents: "문제 풀기",
+      title: "프로그래머스 문제 풀기",
+      contents: "두 수의 합",
       isDone: true,
     },
   ]);
