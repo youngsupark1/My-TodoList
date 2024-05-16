@@ -7,6 +7,8 @@ export const Input = ({ toDos, setTodos }) => {
 
   const labelStyle = {
     margin: "20px",
+    fontWeight: "bold",
+    fontSize: "20px",
   };
 
   const inputStyle = {
