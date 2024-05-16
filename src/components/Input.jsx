@@ -5,6 +5,24 @@ export const Input = ({ toDos, setTodos }) => {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
 
+  const labelStyle = {
+    margin: "20px",
+  };
+
+  const inputStyle = {
+    width: "200px",
+    height: "30px",
+    borderRadius: "10px",
+  };
+
+  const formBtnStyle = {
+    margin: "50px",
+    width: "100px",
+    height: "30px",
+    borderRadius: "10px",
+    backgroundColor: "#19e6a6",
+  };
+
   return (
     <div>
       <form
@@ -21,52 +39,23 @@ export const Input = ({ toDos, setTodos }) => {
           setContents("");
         }}
       >
-        <label
-          style={{
-            margin: "20px",
-          }}
-        >
-          제목
-        </label>
+        <label style={labelStyle}>제목</label>
         <input
-          style={{
-            width: "200px",
-            height: "30px",
-            borderRadius: "10px",
-          }}
+          style={inputStyle}
           value={title}
           onChange={(event) => {
             setTitle(event.target.value);
           }}
         />
-        <label
-          style={{
-            margin: "20px",
-          }}
-        >
-          내용
-        </label>
+        <label style={labelStyle}>내용</label>
         <input
-          style={{
-            width: "200px",
-            height: "30px",
-            borderRadius: "10px",
-          }}
+          style={inputStyle}
           value={contents}
           onChange={() => {
             setContents(event.target.value);
           }}
         />
-        <button
-          type="submit"
-          style={{
-            margin: "50px",
-            width: "100px",
-            height: "30px",
-            borderRadius: "10px",
-            backgroundColor: "#19e6a6",
-          }}
-        >
+        <button type="submit" style={formBtnStyle}>
           입력
         </button>
       </form>

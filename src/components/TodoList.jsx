@@ -1,6 +1,32 @@
 import React from "react";
 
 export const TodoList = ({ toDos, setTodos }) => {
+  const todoCardBox = {
+    border: "5px solid #08ffdb",
+    margin: "10px",
+    paddingLeft: "10px",
+    paddingBottom: "10px",
+    width: "400px",
+  };
+
+  const completBtn = {
+    margin: "25px",
+    width: "150px",
+    height: "40px",
+    border: "3px solid green",
+    borderRadius: "10px",
+    backgroundColor: "#ffffff",
+  };
+
+  const delBtn = {
+    margin: "10px",
+    width: "150px",
+    height: "40px",
+    border: "3px solid red",
+    borderRadius: "10px",
+    backgroundColor: "#ffffff",
+  };
+
   return (
     <>
       <div>
@@ -9,27 +35,11 @@ export const TodoList = ({ toDos, setTodos }) => {
           .filter((todo) => todo.isDone === false)
           .map((todo) => {
             return (
-              <div
-                key={todo.id}
-                style={{
-                  border: "5px solid #08ffdb",
-                  margin: "10px",
-                  paddingLeft: "10px",
-                  paddingBottom: "10px",
-                  width: "400px",
-                }}
-              >
+              <div key={todo.id} style={todoCardBox}>
                 <h3>{todo.title}</h3>
                 <p>{todo.contents}</p>
                 <button
-                  style={{
-                    margin: "25px",
-                    width: "150px",
-                    height: "40px",
-                    border: "3px solid green",
-                    borderRadius: "10px",
-                    backgroundColor: "#ffffff",
-                  }}
+                  style={completBtn}
                   onClick={() => {
                     const newTodos = toDos.map((item) => {
                       if (item.id === todo.id) {
@@ -47,14 +57,7 @@ export const TodoList = ({ toDos, setTodos }) => {
                   완료
                 </button>
                 <button
-                  style={{
-                    margin: "10px",
-                    width: "150px",
-                    height: "40px",
-                    border: "3px solid red",
-                    borderRadius: "10px",
-                    backgroundColor: "#ffffff",
-                  }}
+                  style={delBtn}
                   onClick={() => {
                     const deletedTodos = toDos.filter((item) => {
                       return item.id !== todo.id;
