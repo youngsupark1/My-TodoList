@@ -30,10 +30,14 @@ export const Input = ({ toDos, setTodos }) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          if (title === "" || contents === "") {
+            return alert("제목과 내용을 입력해주세요!");
+          }
+
           const newTodo = {
             id: uuid(),
-            title: title,
-            contents: contents,
+            title,
+            contents,
             isDone: false,
           };
           setTodos([...toDos, newTodo]);

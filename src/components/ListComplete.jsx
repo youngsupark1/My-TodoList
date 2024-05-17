@@ -41,7 +41,7 @@ export const ListComplete = ({ toDos, setTodos }) => {
                 <button
                   style={completBtn}
                   onClick={() => {
-                    const newTodos = toDos.map((item) => {
+                    const updatedTodoList = toDos.map((item) => {
                       if (item.id === todo.id) {
                         return {
                           ...item,
@@ -51,7 +51,7 @@ export const ListComplete = ({ toDos, setTodos }) => {
                         return item;
                       }
                     });
-                    setTodos(newTodos);
+                    setTodos(updatedTodoList);
                   }}
                 >
                   취소
